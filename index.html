@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Dólar para Real</title>
+</head>
+<body>
+    <h1>Conversor Dólar para Real</h1>
+    <p>Insira o valor em dólares:</p>
+    <input type="number" id="valorDolar" placeholder="Valor em dólares" />
+    <button onclick="converter()">Converter</button>
+    <p id="resultado"></p>
+
+    <script>
+        function converter() {
+            const taxaCambio = 6.00;
+            const valorDolar = parseFloat(document.getElementById('valorDolar').value);
+            const valorReal = valorDolar * taxaCambio;
+            document.getElementById('resultado').textContent = 
+                isNaN(valorReal) ? "Por favor, insira um valor válido!" : 
+                `$${valorDolar.toFixed(2)} equivale a R$${valorReal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
